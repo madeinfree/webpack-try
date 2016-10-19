@@ -1,5 +1,4 @@
-ctus
-onsole.log('b.js')
+console.log('b.js')
 /**
  * require.ensure can be dynamic require module.
  * and it can build become chunk by webpack.

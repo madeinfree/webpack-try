@@ -1,6 +1,7 @@
 var webpack = require('webpack')
 var path = require('path')
 var CustomPlugin = require('./plugin/custom-plugin')
+var AwesomeProgressPlugin = require('./plugin/awesome-progress-plugin')
 
 module.exports = {
   entry: {
@@ -43,7 +44,12 @@ module.exports = {
     new CustomPlugin({
       name: 'Whien'
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename:'vendor.bundle.js' })
+    new AwesomeProgressPlugin({ language: 'en_US' }, function(percentage, msg) {
+      process.stdout.clearLine()
+      process.stdout.cursorTo(0)
+      process.stdout.write(msg)
+    }),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename:'vendor.bundle.js' }),
   ],
   node: {
     fs: 'empty'
