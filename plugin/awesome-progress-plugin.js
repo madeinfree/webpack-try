@@ -1,4 +1,4 @@
-function AwesomeProgressPlugin(options = {}, handler) {
+function AwesomeProgressPlugin(options, handler) {
   this.handler = handler
   this.options = options
 }
@@ -46,6 +46,7 @@ AwesomeProgressPlugin.prototype.apply = function(compiler) {
 
   var buildFail = function(module) {
     moduleFail++
+    update()
   }
 
   compiler.plugin('compilation', function(compilation) {
@@ -68,6 +69,36 @@ AwesomeProgressPlugin.prototype.apply = function(compiler) {
       update()
     })
 
+    // hooks
+    var syncHooks = {
+    	"seal": [0.71, "sealing"],
+    	"optimize": [0.72, "optimizing"],
+    	"optimize-modules-basic": [0.73, "basic module optimization"],
+    	"optimize-modules": [0.74, "module optimization"],
+    	"optimize-modules-advanced": [0.75, "advanced module optimization"],
+    	"optimize-chunks-basic": [0.76, "basic chunk optimization"],
+    	"optimize-chunks": [0.77, "chunk optimization"],
+    	"optimize-chunks-advanced": [0.78, "advanced chunk optimization"],
+    	// optimize-tree
+    	"revive-modules": [0.80, "module reviving"],
+    	"optimize-module-order": [0.81, "module order optimization"],
+    	"optimize-module-ids": [0.82, "module id optimization"],
+    	"revive-chunks": [0.83, "chunk reviving"],
+    	"optimize-chunk-order": [0.84, "chunk order optimization"],
+    	"optimize-chunk-ids": [0.85, "chunk id optimization"],
+    	"before-hash": [0.86, "hashing"],
+    	"before-module-assets": [0.87, "module assets processing"],
+    	"before-chunk-assets": [0.88, "chunk assets processing"],
+    	"additional-chunk-assets": [0.89, "additional chunk assets processing"],
+    	"record": [0.90, "recording"]
+    };
+    Object.keys(syncHooks).forEach(function(key, idx) {
+      compilation.plugin(key, function(compilation, callback) {
+        _internalMsg = syncHooks[key][1]
+        update()
+      })
+    })
+
     // builder
     compilation.plugin('succeed-module', buildDone)
     compilation.plugin('failed-module', buildFail)
@@ -84,27 +115,3 @@ AwesomeProgressPlugin.prototype.apply = function(compiler) {
     update()
   })
 }
-
-
-// var syncHooks = {
-// 	"seal": [0.71, "sealing"],
-// 	"optimize": [0.72, "optimizing"],
-// 	"optimize-modules-basic": [0.73, "basic module optimization"],
-// 	"optimize-modules": [0.74, "module optimization"],
-// 	"optimize-modules-advanced": [0.75, "advanced module optimization"],
-// 	"optimize-chunks-basic": [0.76, "basic chunk optimization"],
-// 	"optimize-chunks": [0.77, "chunk optimization"],
-// 	"optimize-chunks-advanced": [0.78, "advanced chunk optimization"],
-// 	// optimize-tree
-// 	"revive-modules": [0.80, "module reviving"],
-// 	"optimize-module-order": [0.81, "module order optimization"],
-// 	"optimize-module-ids": [0.82, "module id optimization"],
-// 	"revive-chunks": [0.83, "chunk reviving"],
-// 	"optimize-chunk-order": [0.84, "chunk order optimization"],
-// 	"optimize-chunk-ids": [0.85, "chunk id optimization"],
-// 	"before-hash": [0.86, "hashing"],
-// 	"before-module-assets": [0.87, "module assets processing"],
-// 	"before-chunk-assets": [0.88, "chunk assets processing"],
-// 	"additional-chunk-assets": [0.89, "additional chunk assets processing"],
-// 	"record": [0.90, "recording"]
-// };

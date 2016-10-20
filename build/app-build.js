@@ -256,7 +256,7 @@ function updateLink(linkElement, obj) {
 /***/ 191:
 /***/ function(module, exports, __webpack_require__) {
 
-var React = __webpack_require__(167)
+var React = __webpack_require__(75)
 var data = __webpack_require__(197)
 
 
@@ -265,8 +265,7 @@ var data = __webpack_require__(197)
 /***/ 192:
 /***/ function(module, exports, __webpack_require__) {
 
-ctus
-onsole.log('b.js')
+console.log('b.js')
 /**
  * require.ensure can be dynamic require module.
  * and it can build become chunk by webpack.
@@ -279,9 +278,10 @@ __webpack_require__.e/* nsure */(0).catch(function(err) { __webpack_require__.oe
 /***/ },
 
 /***/ 193:
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(__resourceQuery) {/* WEBPACK VAR INJECTION */
+/* WEBPACK VAR INJECTION */(function(__resourceQuery) {var react = __webpack_require__(75)
+/* WEBPACK VAR INJECTION */
 console.log('query: num = ' + __resourceQuery)
 
 /* WEBPACK VAR INJECTION */}.call(exports, "?num=1"))
