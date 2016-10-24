@@ -4,9 +4,6 @@ function CustomPlugin(options) {
 }
 
 CustomPlugin.prototype.apply = function(compiler) {
-  var cp = compiler
-  cp.plugin('emit', function(compilation, callback) {
-    callback()  
-  }.bind(this))
+  console.log(compiler)
 }
 module.exports = CustomPlugin
