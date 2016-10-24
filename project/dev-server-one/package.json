@@ -2,6 +2,8 @@
   "dependencies": {
     "chokidar": "^1.6.1",
     "koa": "next",
+    "koa-mount": "^1.3.0",
+    "koa-static": "^2.0.0",
     "sockjs-client": "^1.1.1"
   }
 }

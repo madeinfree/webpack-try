@@ -5,7 +5,6 @@
     <title></title>
   </head>
   <body>
-    Hello Koa Socket!!!!
     <script src="//cdn.jsdelivr.net/sockjs/1.0.1/sockjs.min.js"></script>
     <script>
       var socket_url = '/sockjs-node'
@@ -22,6 +21,11 @@
             break
         }
       }
+      sockjs.onclose = function(e) {
+        sockjs.close()
+        console.log('close')
+      }
     </script>
+    <script src='build/bundle.js'></script>
   </body>
 </html>

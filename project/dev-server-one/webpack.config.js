@@ -8,6 +8,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin({ hot: true })
-  ]
+    // new webpack.HotModuleReplacementPlugin({ hot: true })
+  ],
+  watch: true
 }
