@@ -11,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-stage-0": "^6.16.0",
     "loader-utils": "^0.2.16",
     "postcss": "^5.2.4",
     "react": "^15.3.2",
+    "sockjs": "^0.3.18",
     "style-loader": "^0.13.1",
     "webpack": "beta"
   }

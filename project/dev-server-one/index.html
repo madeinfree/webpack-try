@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Hello Koa Socket!!!!
+    <script src="//cdn.jsdelivr.net/sockjs/1.0.1/sockjs.min.js"></script>
+    <script>
+      var socket_url = '/sockjs-node'
+      var sockjs = new SockJS(socket_url)
+      sockjs.onopen = function(e) { console.log('[*] websocket open') }
+      sockjs.onmessage = function(e) {
+        var msg = JSON.parse(e.data)
+        switch(msg.type) {
+          case 'connecting':
+            console.log('[*] koa websocket connecting..')
+            break
+          case 'content-changed':
+            window.location.reload()
+            break
+        }
+      }
+    </script>
+  </body>
+</html>
