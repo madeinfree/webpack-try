@@ -1,2 +1,5 @@
-/* WEBPACK VAR INJECTION */
-console.log('query: num = ' + __resourceQuery)
+require('../../rdt/demo1.rdt')
+alert(1)
+if (module.hot) {
+  console.log('yes!')
+}

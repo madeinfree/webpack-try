@@ -61,17 +61,53 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: RangeError: Maximum call stack size exceeded\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:3)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)\n    at Module.module.exports (/Users/quweiliu/Desktop/try/webpack-try/loader/custom-loader.js:3:22)");
+var myAccept = "accept";
+__webpack_require__(1)
+alert(1)
+if (false) {
+  console.log('yes!')
+}
+
 
 /***/ },
 /* 1 */
+/***/ function(module, exports) {
+
+"use strict";
+"use strict";
+
+var App = React.createClass({
+  displayName: "App",
+
+  propTypes: {
+    "title": "React.PropTypes.string",
+    "name": "React.PropTypes.string"
+  },
+  getInitialState: function getInitialState() {
+    return {
+      "age": "1",
+      "gender": "boy"
+    };
+  },
+  render: function render() {
+    return React.createElement(
+      "div",
+      null,
+      "Powerful demo"
+    );
+  }
+});
+module.exports = App;
+
+/***/ },
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(0);

@@ -1,0 +1,4 @@
+[Name=(App)]
+[State=(age=1,gender='boy')]
+[Props=(title:string,name:string)]
+[Render=(<div>Powerful demo</div>)]

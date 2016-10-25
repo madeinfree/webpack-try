@@ -1,6 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
 
+var CustomPlugin = require('./plugin/custom-plugin')
+
 module.exports = {
   entry: {
     app: ['./src/js/c.js']
@@ -14,14 +16,21 @@ module.exports = {
       {
         test: /\.js$/,
         loader: './loader/custom-loader.js?limit=2'
+      },
+      {
+        test: /\.rdt/,
+        loader: 'babel!./loader/rdt-loader.js'
       }
     ],
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        hot: true
-      }
+    new CustomPlugin({
+      name: 'Whien'
     })
+    // new webpack.LoaderOptionsPlugin({
+    //   options: {
+    //     hot: true
+    //   }
+    // })
   ]
 }
